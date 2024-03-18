@@ -6,8 +6,9 @@ body {
 
 .tv-screen {
     width: 80%;
+    height: 500px;
     max-width: 800px;
-    margin: 5000px auto;
+    margin: 50px auto;
     padding: 20px;
     background-color: #333;
     border: 20px solid #000;

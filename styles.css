@@ -13,6 +13,14 @@ body {
     max-width: 800px;
 }
 
+.grey-box2 {
+    width: 800px;
+    height: 500px;
+    background-color: #8800ff;
+    position: relative;
+    overflow: hidden;
+}
+
 .grey-box {
     width: 700px;
     height: 400px;

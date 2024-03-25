@@ -88,17 +88,21 @@
 </div>
 
 <script>
-    function handleClick() {
+    function handleClick1() {
         alert("Starting Game...");
         // Add your game start logic here
     }
+    var Play = document.getElementById('myButton');
+    play.addEventListener('click', handleClick1);
 
-    function handleClick() {
+    
+    function handleClick2() {
         alert("These are the instructions...");
         // Add your instructions logic here
     }
-    var button = document.getElementById('myButton');
-    button.addEventListener('click', handleClick);
+
+    var instruc = document.getElementById('myButton');
+    instruc.addEventListener('click', handleClick2);
 </script>
 </body>
 </html>

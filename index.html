@@ -25,11 +25,17 @@
         border-radius: 20px;
         padding: 20px;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: space-between;
     }
+    .buttons-container {
+        margin-left: auto; /* Pushes buttons to the right */
+    }
 
+    .joystick-container {
+        margin-right: auto; /* Pushes joystick to the left */
+    }
     button {
         width: 200px;
         height: 50px;
@@ -79,14 +85,17 @@
 <body>
 
 <div class="arcade">
-    <h1>Virtual Arcade</h1>
+    <div class="joystick-container">
+        <div class="joystick"></div>
+        <div class="stick"></div>
+    </div>
     <div class="buttons-container">
+        <h1>Virtual Arcade</h1>
         <button id="Play">Play</button>
         <button id="instruc">Instructions</button>
-        <div class="joystick"></div>
-        <div class="stick"> </div>   
     </div>
 </div>
+
 
 <script>
 function handleClick1() {

@@ -25,17 +25,27 @@
         border-radius: 20px;
         padding: 20px;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
     }
+    
+    .header {
+    align-self: flex-start; /* Aligns header to the top */
+    }
+    
+    .content {
+    display: flex;
+    flex-direction: row; /* Align joystick and buttons in a row */
+    justify-content: space-between; /* Distribute space between joystick and buttons */
+    }
+    
     .buttons-container {
-        margin-left: auto; /* Pushes buttons to the right */
+        align-self: flex-end;
     }
 
     .joystick-container {
-        margin-right: auto; /* Pushes joystick to the left */
+        align-self: flex-end;
     }
+    
     button {
         width: 200px;
         height: 50px;
@@ -85,16 +95,21 @@
 <body>
 
 <div class="arcade">
-    <div class="joystick-container">
+    <div class="header">
         <h1>Virtual Arcade</h1>
-        <div class="joystick"></div>
-        <div class="stick"></div>
     </div>
-    <div class="buttons-container">
-        <button id="Play">Play</button>
-        <button id="instruc">Instructions</button>
+    <div class="content">
+        <div class="joystick-container">
+            <div class="joystick"></div>
+            <div class="stick"></div>
+        </div>
+        <div class="buttons-container">
+            <button id="Play">Play</button>
+            <button id="instruc">Instructions</button>
+        </div>
     </div>
 </div>
+
 
 
 <script>

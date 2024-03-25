@@ -31,7 +31,32 @@
     .header {
     align-self: flex-start; /* Aligns header to the top */
     }
-    
+    .black-box {
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .screen-sheen {
+        position: absolute;
+        top: -150%;
+        left: -50%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 80%);
+        animation: sheen-animation 2s infinite linear;
+    }
+    @keyframes sheen-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
     .content {
     display: flex;
     flex-direction: row; /* Align joystick and buttons in a row */
@@ -97,6 +122,9 @@
 <div class="arcade">
     <div class="header">
         <h1>Virtual Arcade</h1>
+    </div>
+    <div class="black-box">
+        <div class="screen-sheen"></div>
     </div>
     <div class="content">
         <div class="joystick-container">

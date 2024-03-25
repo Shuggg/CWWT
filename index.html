@@ -80,24 +80,25 @@
 
 <div class="arcade">
     <h1>Virtual Arcade</h1>
-    <button> Play</button>
-    <button> Instructions </button>
+    <button id="Play"> Play</button>
+    <button id="instruc"> Instructions </button>
     <div class="joystick" ></div>
     <div class="stick"></div>
     
 </div>
 
 <script>
-    function startGame() {
-        alert("You're so hot...");
+    function handleClick() {
+        alert("Starting Game...");
         // Add your game start logic here
     }
 
-    function instructions() {
+    function handleClick() {
         alert("These are the instructions...");
         // Add your instructions logic here
     }
+    var button = document.getElementById('myButton');
+    button.addEventListener('click', handleClick);
 </script>
-
 </body>
 </html>

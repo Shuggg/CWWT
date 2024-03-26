@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let prevColorChoiceIndex = 0;
     const dvdWidth = dvd.clientWidth;
     const dvdHeight = dvd.clientHeight;
-    const blackBox = document.querySelector(".black-box");
+    let blackBox = document.getElementById("black-box");
     const boxWidth = blackBox.offsetWidth - dvdWidth; // Adjust for DVD width
     const boxHeight = blackBox.offsetHeight - dvdHeight; // Adjust for DVD height
 

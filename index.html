@@ -216,8 +216,8 @@ function animate() {
 
     dvd.style.backgroundColor = getNewRandomColor();
   }
-  x = Math.min(Math.max(x + dirX * speed, 0), boxWidth);
-  y = Math.min(Math.max(y + dirY * speed, 0), boxHeight);
+  x = Math.min(Math.max(x + dirX * speed, 0), screenWidth);
+  y = Math.min(Math.max(y + dirY * speed, 0), screenHeight);
   dvd.style.left = x + "px";
   dvd.style.top = y + "px";
   window.requestAnimationFrame(animate);

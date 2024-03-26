@@ -46,11 +46,11 @@
         width: 400px;
         height: 600px;
         border-radius: 50%;
-        background: radial-gradient(white, transparent 50%);
-        opacity: 0.6;
+        background: radial-gradient(white, transparent 30%);
+        opacity: 0.5;
         pointer-events: none; /* This prevents the lens flare from capturing mouse events */
         z-index: 2; /* Ensure it's above the screen sheen */
-        animation: rotateLensFlare 10s linear infinite; /* Adjust duration and timing function as needed */
+        animation: rotateLensFlare 30s linear infinite; /* Adjust duration and timing function as needed */
     }
 
     @keyframes rotateLensFlare {
@@ -69,7 +69,7 @@
     }
 
     .arcade-Divider{
-        border: 10px solid #000000;
+        border: 5px solid black;
         border-top: 7px solid black;
         width: 100%;
     }

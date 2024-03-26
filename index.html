@@ -165,66 +165,74 @@
 
 
 <script>
-function handleClick1() {
-    alert("Starting Game...");
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to handle the "Play" button click event
+    function handlePlayClick() {
+        alert("Starting Game...");
         // Add your game start logic here
-}
-var Play = document.getElementById('Play');
-Play.addEventListener('click', handleClick1);
+    }
 
-    
-function handleClick2() {
-    alert("These are the instructions...");
+    // Function to handle the "Instructions" button click event
+    function handleInstrucClick() {
+        alert("These are the instructions...");
         // Add your instructions logic here
-}
+    }
 
-var instruc = document.getElementById('instruc');
-instruc.addEventListener('click', handleClick2);
+    // Add event listeners to the "Play" and "Instructions" buttons
+    var playButton = document.getElementById("Play");
+    playButton.addEventListener("click", handlePlayClick);
 
+    var instrucButton = document.getElementById("instruc");
+    instrucButton.addEventListener("click", handleInstrucClick);
 
-let x = 0,
-  y = 0,
-  dirX = 1,
-  dirY = 1;
-const speed = 4;
-const pallete = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188"];
-let dvd = document.getElementById("dvd");
-dvd.style.backgroundColor = pallete[0];
-let prevColorChoiceIndex = 0;
-let black = document.getElementById("black");
-const dvdWidth = dvd.clientWidth;
-const dvdHeight = dvd.clientHeight;
-const blackBox = document.querySelector(".black-box");
+    // DVD bouncing animation
+    let x = 0,
+        y = 0,
+        dirX = 1,
+        dirY = 1;
+    const speed = 4;
+    const palette = ["#ff8800", "#e124ff", "#6a19ff", "#ff2188"];
+    let dvd = document.getElementById("dvd");
+    dvd.style.backgroundColor = palette[0];
+    let prevColorChoiceIndex = 0;
+    const dvdWidth = dvd.clientWidth;
+    const dvdHeight = dvd.clientHeight;
+    const blackBox = document.querySelector(".black-box");
+    const boxWidth = blackBox.offsetWidth - dvdWidth; // Adjust for DVD width
+    const boxHeight = blackBox.offsetHeight - dvdHeight; // Adjust for DVD height
 
-function getNewRandomColor() {
-  const currentPallete = [...pallete]
-  currentPallete.splice(prevColorChoiceIndex,1)
-  const colorChoiceIndex = Math.floor(Math.random() * currentPallete.length);
-  prevColorChoiceIndex = colorChoiceIndex<prevColorChoiceIndex?colorChoiceIndex:colorChoiceIndex+1;
-  const colorChoice = currentPallete[colorChoiceIndex];
-  return colorChoice;
-}
-function animate() {
-  const screenHeight = blackBox.offsetHeight;
-  const screenWidth = blackBox.offsetWidth;
+    function getNewRandomColor() {
+        const currentPalette = palette.filter((color, index) => index !== prevColorChoiceIndex);
+        const colorChoiceIndex = Math.floor(Math.random() * currentPalette.length);
+        prevColorChoiceIndex = colorChoiceIndex < prevColorChoiceIndex ? colorChoiceIndex : colorChoiceIndex + 1;
+        return currentPalette[colorChoiceIndex];
+    }
 
-  if (y + dvdHeight >= screenHeight || y < 0) {
-    dirY *= -1;
-    dvd.style.backgroundColor = getNewRandomColor();
-  }
-  if (x + dvdWidth >= screenWidth || x < 0) {
-    dirX *= -1;
+    function animate() {
+        const screenHeight = blackBox.offsetHeight;
+        const screenWidth = blackBox.offsetWidth;
 
-    dvd.style.backgroundColor = getNewRandomColor();
-  }
-  x = Math.min(Math.max(x + dirX * speed, 0), screenWidth);
-  y = Math.min(Math.max(y + dirY * speed, 0), screenHeight);
-  dvd.style.left = x + "px";
-  dvd.style.top = y + "px";
-  window.requestAnimationFrame(animate);
-}
+        if (y + dvdHeight >= screenHeight || y < 0) {
+            dirY *= -1;
+            dvd.style.backgroundColor = getNewRandomColor();
+        }
+        if (x + dvdWidth >= screenWidth || x < 0) {
+            dirX *= -1;
+            dvd.style.backgroundColor = getNewRandomColor();
+        }
 
-window.requestAnimationFrame(animate);
+        // Adjust x and y to keep DVD within the black box
+        x = Math.min(Math.max(x + dirX * speed, 0), boxWidth);
+        y = Math.min(Math.max(y + dirY * speed, 0), boxHeight);
+
+        dvd.style.left = x + "px";
+        dvd.style.top = y + "px";
+        window.requestAnimationFrame(animate);
+    }
+
+    // Start the animation
+    window.requestAnimationFrame(animate);
+});
 
 </script>
 </body>

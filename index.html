@@ -44,14 +44,16 @@
     .lens-flare {
         position: absolute;
         width: 200px;
-        height: 300px;
+        height: 700px;
         border-radius: 50%;
         background: radial-gradient(white, transparent 30%);
         opacity: 0.5;
         pointer-events: none; /* This prevents the lens flare from capturing mouse events */
         z-index: 2; /* Ensure it's above the screen sheen */
-        animation: rotateLensFlare 30s linear infinite; /* Adjust duration and timing function as needed */
+        animation: rotateLensFlare 10s linear infinite; /* Adjust duration and timing function as needed */
+        margin-top: -20px;
     }
+    
 
     @keyframes rotateLensFlare {
         from {
@@ -120,7 +122,7 @@
         background-color: #ffc107;
         position: relative;
         border-radius: 10px;
-        margin-left: 100px;
+        margin-left: 130px;
     }
 </style>
 </head>

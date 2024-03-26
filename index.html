@@ -204,8 +204,8 @@ function getNewRandomColor() {
   return colorChoice;
 }
 function animate() {
-  const screenHeight = document.body.clientHeight;
-  const screenWidth = document.body.clientWidth;
+  const screenHeight = blackBox.offsetHeight;
+  const screenWidth = blackBox.offsetWidth;
 
   if (y + dvdHeight >= screenHeight || y < 0) {
     dirY *= -1;

@@ -44,7 +44,7 @@
     .lens-flare {
         position: absolute;
         width: 200px;
-        height: 700px;
+        height: 1200px;
         border-radius: 50%;
         background: radial-gradient(white, transparent 30%);
         opacity: 0.5;
@@ -201,8 +201,8 @@ function getNewRandomColor() {
   return colorChoice;
 }
 function animate() {
-  const screenHeight = black.Height;
-  const screenWidth = black.Width;
+  const screenHeight = black.clientHeight;
+  const screenWidth = black.clientWidth;
 
   if (y + dvdHeight >= screenHeight || y < 0) {
     dirY *= -1;
